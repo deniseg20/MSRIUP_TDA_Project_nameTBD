@@ -160,39 +160,6 @@ class FQHCScraper:
         
         raise TimeoutException("No table found within timeout period")
     
-    def try_apply_fqhc_filter(self, driver):
-        """
-        Attempt to apply FQHC filter if available
-        """
-        filter_selectors = [
-            "input[value*='FQHC' i]",
-            "input[value*='Federally Qualified Health Center' i]",
-            "button[data-filter*='fqhc' i]",
-            "select option[value*='fqhc' i]",
-            "label:contains('FQHC')",
-            "label:contains('Federally Qualified')"
-        ]
-        
-        for selector in filter_selectors:
-            try:
-                if "contains" in selector:
-                    # Handle XPath selectors
-                    xpath = f"//label[contains(text(), 'FQHC')] | //label[contains(text(), 'Federally Qualified')]"
-                    filter_element = driver.find_element(By.XPATH, xpath)
-                else:
-                    filter_element = driver.find_element(By.CSS_SELECTOR, selector)
-                
-                if filter_element.is_displayed() and filter_element.is_enabled():
-                    filter_element.click()
-                    logger.info(f"Applied FQHC filter using selector: {selector}")
-                    time.sleep(2)
-                    return True
-            except (NoSuchElementException, Exception):
-                continue
-        
-        logger.info("No FQHC filter found or could not be applied")
-        return False
-    
     def scrape_with_selenium(self):
         """
         Use Selenium for JavaScript-heavy sites with improved pagination handling
@@ -213,13 +180,14 @@ class FQHCScraper:
             table = self.wait_for_table_load(driver)
             
             # Try to apply FQHC filter
-            self.try_apply_fqhc_filter(driver)
+            #self.try_apply_fqhc_filter(driver)
             
             # Wait a bit more for any dynamic content after filtering
             time.sleep(3)
             
             # Scrape all pages
             all_data = []
+            seen = set()
             page_number = 1
             max_pages = 100
             consecutive_empty_pages = 0
@@ -365,13 +333,11 @@ class FQHCScraper:
         
         fqhc_data = []
         fqhc_keywords = [
-            'federally qualified health center (fqhc)',
-            'fqhc',
-            'federally qualified health center'
+            'federally qualified health centers (fqhc)',
+            'federally qualified health center (fqhc)/comprehensive health center',
         ]
         
         exclude_keywords = [
-            'comprehensive health',
             'look-a-like',
             'look a like',
             'lookalike'
@@ -446,12 +412,12 @@ def main():
                 logger.info(json.dumps(all_data[0], indent=2))
             
             # Filter for FQHC only
-            fqhc_data = scraper.filter_fqhc_data(all_data)
+            #fqhc_data = scraper.filter_fqhc_data(all_data)
             
             # Save all data for reference
             scraper.save_to_json(all_data, "all_health_centers_data.json")
             
-            if fqhc_data:
+            '''if fqhc_data:
                 # Save FQHC-specific data
                 scraper.save_to_json(fqhc_data, "fqhc_data.json")
                 
@@ -477,8 +443,8 @@ def main():
                 # Show some sample records to help debug
                 if len(all_data) > 0:
                     logger.info("\nSample records for debugging:")
-                    for i, record in enumerate(all_data[:3]):
-                        logger.info(f"Sample record {i+1}: {record}")
+                    for i, record in enumerate(all_data):
+                        logger.info(f"Sample record {i+1}: {record}")'''
                         
         else:
             logger.error("Failed to scrape any data.")

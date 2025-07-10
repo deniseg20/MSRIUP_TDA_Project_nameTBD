@@ -1,0 +1,2000 @@
+[
+  {
+    "street_address":"100 Independence Cir",
+    "city":"Chico",
+    "county":"Butte",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1000 Newbury Rd",
+    "city":"Newbury",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1000 Skyline Blvd",
+    "city":"Avenal",
+    "county":"Kings",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1001 E Grand Ave",
+    "city":"Escondido",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1001 Main St",
+    "city":"Delano",
+    "county":"Kern",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"101 N Palm St",
+    "city":"Woodlake",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1030 Nevin Ave",
+    "city":"Richmond",
+    "county":"Contra Costa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1031 Waterloo Rd",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"10408 Vacco St",
+    "city":"South El Monte",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"10418 Valley Blvd",
+    "city":"El Monte",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"10561 Merritt St",
+    "city":"Castroville",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1066 S White Rd",
+    "city":"San Jose",
+    "county":"Santa Clara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"10700 Macarthur Blvd",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1080 Emeline Ave",
+    "city":"Santa Cruz",
+    "county":"Santa Cruz",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1100 Trancas St",
+    "city":"Napa",
+    "county":"Napa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1107 W Poplar Ave",
+    "city":"Porterville",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1111 W Chase Ave",
+    "city":"El Cajon",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1114 6th St",
+    "city":"Modesto",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1119 E Monte Vista Ave",
+    "city":"Vacaville",
+    "county":"Solano",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1120 E Church Ave",
+    "city":"Fresno",
+    "county":"Fresno",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1121 E Washington Ave",
+    "city":"Escondido",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1121 Hammond St",
+    "city":"Modesto",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"11336 Bartlett Ave",
+    "city":"Adelanto",
+    "county":"San Bernardino",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1136 D Ave",
+    "city":"National City",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1140 Main St",
+    "city":"Livingston",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1141 Olive Ave",
+    "city":"Turlock",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"115-A Coral St",
+    "city":"Santa Cruz",
+    "county":"Santa Cruz",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1155 W Central Ave",
+    "city":"Santa Ana",
+    "county":"Orange",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1187 E S St",
+    "city":"Orland",
+    "county":"Glenn",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"12-520 Palm Dr",
+    "city":"Desert Hot Springs",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1200 Maricopa Hwy",
+    "city":"Ojai",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1200 W Main St",
+    "city":"Turlock",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"12130 Paramount Blvd",
+    "city":"Downey",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"12157 Victory Blvd",
+    "city":"North Hollywood",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"122 E San Antonio Dr",
+    "city":"King City",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"122 San Antonio Dr",
+    "city":"King City",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1222 Pine St",
+    "city":"St. Helena",
+    "county":"Napa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"12250 Skyline Blvd",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1227 W 17th St",
+    "city":"Santa Ana",
+    "county":"Orange",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"123 S Alvarado St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1231 Plumas St",
+    "city":"Yuba City",
+    "county":"Sutter",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"12360 Firestone Blvd",
+    "city":"Norwalk",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"125 W Thousand Oaks Blvd",
+    "city":"Thousand Oaks",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1250 6th Ave",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"12540 Pierce St",
+    "city":"Pacoima",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"12586 Ave",
+    "city":"Orosi",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"12619 Bentley St",
+    "city":"Waterford",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"127 W El Portal Dr",
+    "city":"Merced",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"12751 Harbor Blvd",
+    "city":"Garden Grove",
+    "county":"Orange",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1289 S Marina Dr",
+    "city":"Salton City",
+    "county":"Imperial",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1300 N Ventura Rd",
+    "city":"Oxnard",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1300 N Vermont Ave",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1300 S Sunset Blvd",
+    "city":"West Covina",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1301 4th St",
+    "city":"Napa",
+    "county":"Napa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1305 Concord St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"131 W A St",
+    "city":"Dixon",
+    "county":"Solano",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"13161 Jefferson St",
+    "city":"LE GRAND",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"133 W Main St",
+    "city":"El Cajon",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1330 Cardinal St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1333 Meridian Ave",
+    "city":"San Jose",
+    "county":"Santa Clara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"13356 Eldridge Ave",
+    "city":"Sylmar",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"13500 Airport Rd",
+    "city":"Boonville",
+    "county":"Mendocino",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1381 University St",
+    "city":"Healdsburg",
+    "county":"Sonoma",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1385 Mission St",
+    "city":"San Miguel",
+    "county":"San Luis Obispo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"140 C St",
+    "city":"Lemoore",
+    "county":"Kings",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"140 Elm St",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1400 N Main St",
+    "city":"Santa Ana",
+    "county":"Orange",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1401 S Grand Ave",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1405 California Ave",
+    "city":"Dos Palos",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1411 E 31st St",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1418 E Main St",
+    "city":"Santa Maria",
+    "county":"Santa Barbara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1424 Crusado Ln",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1424 Madera Blvd",
+    "city":"Simi Valley",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1430 Freedom Blvd",
+    "city":"Watsonville",
+    "county":"Santa Cruz",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"145 N Clark St",
+    "city":"Fresno",
+    "county":"Fresno",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"150 Tejas Pl",
+    "city":"Nipomo",
+    "county":"San Luis Obispo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1500 Florida Ave",
+    "city":"Modesto",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1510 Florida Ave",
+    "city":"Modesto",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1515 Fruitvale Ave",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1540 Florida Ave",
+    "city":"Modesto",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1551 Bishop St",
+    "city":"San Luis Obispo",
+    "county":"San Luis Obispo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"160 Capp St",
+    "city":"San Francisco",
+    "county":"San Francisco",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1625 E Fourth St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1625 Fourth St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"16300 Cloverdale Rd",
+    "city":"Happy Valley",
+    "county":"Shasta",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"16453 Bear Valley Rd",
+    "city":"Hesperia",
+    "county":"San Bernardino",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1646 S Olive St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1649 W Washington Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"165 S 1st St",
+    "city":"El Cajon",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"16650 Hwy",
+    "city":"Pauma Valley",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1695 N Sunrise Way",
+    "city":"Palm Springs",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1704 Colorado Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"17050 S Grafton St",
+    "city":"Esparto",
+    "county":"Yolo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1717 Las Vegas St",
+    "city":"Modesto",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1721 E Hammer Ln",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1735 Mission St",
+    "city":"San Francisco",
+    "county":"San Francisco",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1776 E Century Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1800 N Lake Ave",
+    "city":"Pasadena",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1801 E March Ln",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1809 National Ave",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1814 W Lincoln Ave",
+    "city":"Anaheim",
+    "county":"Orange",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"18144 Seco St",
+    "city":"Jamestown",
+    "county":"Tuolumne",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1820 W Lincoln Ave",
+    "city":"Anaheim",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1855 N Fair Oaks Ave",
+    "city":"Pasadena",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1860 Howe Ave",
+    "city":"Sacramento",
+    "county":"Sacramento",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1900 E Slauson Ave",
+    "city":"Huntington Beach",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1900 E Slauson Ave",
+    "city":"Huntington Park",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1920 Marengo St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1921 Maple Ave",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1970 University Ave",
+    "city":"Riverside",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"1993 Mckee Rd",
+    "city":"San Jose",
+    "county":"Santa Clara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"200 C St",
+    "city":"Patterson",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"200 Cottage Ave",
+    "city":"Manteca",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"200 S Wells Rd",
+    "city":"Ventura",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2001 Dwight Way",
+    "city":"Berkeley",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2003 E Mariposa Rd",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"201 E Lakeview Ave",
+    "city":"Woodlake",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2015 E Mariposa Rd",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2021 Main St",
+    "city":"Oakley",
+    "county":"Contra Costa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2023 Vale Rd",
+    "city":"San Pablo",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2031 6th St",
+    "city":"Berkeley",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"20326 Main St",
+    "city":"Stratford",
+    "county":"Kings",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2044 Fair St",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"205 S St",
+    "city":"Fort Bragg",
+    "county":"Mendocino",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2050 S Blosser Rd",
+    "city":"Santa Maria",
+    "county":"Santa Barbara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"210 Central Ave",
+    "city":"Alameda",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"210 Hospital Dr",
+    "city":"Vallejo",
+    "county":"Solano",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2100 Monument Blvd",
+    "city":"Pleasant Hill",
+    "county":"Contra Costa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2101 35th Ave",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2101 Courage Dr",
+    "city":"Fairfield",
+    "county":"Solano",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2101 Tenaya Dr",
+    "city":"Modesto",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2105 Beverly Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"21138 Paso Robles Hwy",
+    "city":"Lost Hills",
+    "county":"Kern",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"217 Highland Ave",
+    "city":"National City",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"219 N Sanborn Rd",
+    "city":"Salinas",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"220 Hospital Dr",
+    "city":"Vallejo",
+    "county":"Solano",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2201 Courage Dr",
+    "city":"Fairfield",
+    "county":"Solano",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2201 Encinal Ave",
+    "city":"Alameda",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"221 Ventura Blvd",
+    "city":"Oxnard",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2216 Fair St",
+    "city":"Chico",
+    "county":"Butte",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2219 E 1st St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"223 Bassett St",
+    "city":"King City",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2240 E Gonzales Rd",
+    "city":"Oxnard",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2240 Gladstone Dr",
+    "city":"Pittsburg",
+    "county":"Contra Costa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2251 Bancroft Ave",
+    "city":"San Leandro",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2321 W Whittier Blvd",
+    "city":"Montebello",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2325 Commercial St",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"23763 Valencia Blvd",
+    "city":"Valencia",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2380 Montpelier Dr",
+    "city":"San Jose",
+    "county":"Santa Clara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"23832 Rockfield Blvd",
+    "city":"Lake Forest",
+    "county":"Orange",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"240 Shotwell St",
+    "city":"San Francisco",
+    "county":"San Francisco",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2400 Moorpark Ave",
+    "city":"San Jose",
+    "county":"Santa Clara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2400 S C St",
+    "city":"Oxnard",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2401 W Turner Rd",
+    "city":"Lodi",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"243 Georgia St",
+    "city":"Vallejo",
+    "county":"Solano",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"250 E 18th St",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2500 Alhambra Ave",
+    "city":"Martinez",
+    "county":"Contra Costa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2505 E Divisadero St",
+    "city":"Fresno",
+    "county":"Fresno",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"251 Landis Ave",
+    "city":"Chula Vista",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2515 Main St",
+    "city":"Cambria",
+    "county":"San Luis Obispo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2600 MacDonald Ave",
+    "city":"Richmond",
+    "county":"Contra Costa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"263 S W St",
+    "city":"Tulare",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2640 E Lafayette St",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"26926-B Cherry Hills Blvd",
+    "city":"Menifee",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2716 International Blvd",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2720 S Bristol St",
+    "city":"Santa Ana",
+    "county":"Orange",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2760 3rd St",
+    "city":"CERES",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"278 Main St",
+    "city":"Hamilton City",
+    "county":"Glenn",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2790 S Elm Ave",
+    "city":"Fresno",
+    "county":"Fresno",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2798 S Elm Ave",
+    "city":"Fresno",
+    "county":"Fresno",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2801 Santa Maria Way",
+    "city":"Santa Maria",
+    "county":"Santa Barbara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2801 Silver St",
+    "city":"Anderson",
+    "county":"Shasta",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2845 64th Ave",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"286 Euclid Ave",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2880 Story Rd",
+    "city":"San Jose",
+    "county":"Santa Clara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"29-A Bishop Rd",
+    "city":"Pajaro",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"2950 International Blvd",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"29632 Hwy",
+    "city":"Round Mountain",
+    "county":"Shasta",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"301 Howard Rd",
+    "city":"Westley",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"305 E Center St",
+    "city":"Visalia",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3052 Willow Pass Rd",
+    "city":"Concord",
+    "county":"Contra Costa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3075 Mission Blvd",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"30979 Rd",
+    "city":"Visalia",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"311 Winston St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"31180 Rd",
+    "city":"Goshen",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3124 International Blvd",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3160 E Del Mar Blvd",
+    "city":"Pasadena",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3177 Oceanview Blvd",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3200 Senter Rd",
+    "city":"San Jose",
+    "county":"Santa Clara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"325 Posada Ln",
+    "city":"Templeton",
+    "county":"San Luis Obispo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3260 Kerner Blvd",
+    "city":"San Rafael",
+    "county":"Marin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3260 Sacramento St",
+    "city":"Berkeley",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"329 W 8th St",
+    "city":"Hanford",
+    "county":"Kings",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"33025 Rd",
+    "city":"Ivanhoe",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"333 Laws Ave",
+    "city":"Ukiah",
+    "county":"Mendocino",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"345 Spring St",
+    "city":"Paso Robles",
+    "county":"San Luis Obispo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3451 E 12th St",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3455 Percy St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3505 Lone Tree Way",
+    "city":"Antioch",
+    "county":"Contra Costa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3544 30th St",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"355 Central Ave",
+    "city":"Fillmore",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3554 W Mount Whitney Ave",
+    "city":"Riverdale",
+    "county":"Fresno",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"35800 Hwy",
+    "city":"Springville",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"365 Tuolumne St",
+    "city":"Vallejo",
+    "county":"Solano",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3690 Mission Blvd",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"370 N Montgomery St",
+    "city":"San Jose",
+    "county":"Santa Clara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3800 Coolidge Ave",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3801 Las Posas Rd",
+    "city":"Camarillo",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3820 Martin Luther King Jr Blvd",
+    "city":"Lynwood",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3820 Martin Luther King Jr. Blvd",
+    "city":"Lynwood",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"3945 Whittier Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"400 Capistrano Dr",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"400 E Oak Ave",
+    "city":"Visalia",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"401 E School Ave",
+    "city":"Visalia",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"401 Lesher Dr",
+    "city":"Merced",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"401 Trinity Ave",
+    "city":"Chowchilla",
+    "county":"Madera",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4010 E Chapman Ave",
+    "city":"Orange",
+    "county":"Orange",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4050 Beyer Blvd",
+    "city":"San Ysidro",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4060 Fairmount Ave",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4094 4th Ave",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4150 Patterson Rd",
+    "city":"Riverbank",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"416 Spring St",
+    "city":"Paso Robles",
+    "county":"San Luis Obispo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"41651 Sierra Dr",
+    "city":"Three Rivers",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4171 Fairmount Ave",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4177 Ave",
+    "city":"Traver",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"41840 Enterprise Cir",
+    "city":"Temecula",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"420 S Glendora Ave",
+    "city":"West Covina",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"423 S San Joaquin St",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"425 N Date St",
+    "city":"Escondido",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"425 W Central Ave",
+    "city":"Lompoc",
+    "county":"Santa Barbara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4279 Tierra Rejada Rd",
+    "city":"Moorpark",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"430 S Blosser Rd",
+    "city":"Santa Maria",
+    "county":"Santa Barbara",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4326 Golden Center Dr",
+    "city":"Placerville",
+    "county":"El Dorado",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"436-435 Susan Dr",
+    "city":"Doyle",
+    "county":"Lassen",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4361 Railroad Ave",
+    "city":"Pleasanton",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"440 Airport Blvd",
+    "city":"Salinas",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"45 Hazel St",
+    "city":"Willits",
+    "county":"Mendocino",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"45 Nielson St",
+    "city":"Watsonville",
+    "county":"Santa Cruz",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"450 W Clara St",
+    "city":"Oxnard",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"452 S Main St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"455 W Montana St",
+    "city":"Pasadena",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"460 N Elm St",
+    "city":"Escondido",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4610 Foothill Blvd",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4641 Missouri Flat Rd",
+    "city":"Placerville",
+    "county":"El Dorado",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4650 W Olympic Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4650 W Sunset Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4725 Market St",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"4874 Polk Ave",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"500 E Main St",
+    "city":"Santa Paula",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"500 Pacific Ave",
+    "city":"Alameda",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"501 N Bridge St",
+    "city":"Visalia",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"5059 York Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"517 S Madera Ave",
+    "city":"Kerman",
+    "county":"Fresno",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"522 S San Pedro St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"5220 Claremont Ave",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"525 E Main St",
+    "city":"El Cajon",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"5275 Claremont Ave",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"5335 Lakeshore Blvd",
+    "city":"Lakeport",
+    "county":"Lake",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"535 S Second Ave",
+    "city":"Covina",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"5400 Telegraph Ave",
+    "city":"Alameda",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"5425 Pomona Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"5427 E Whittier Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"5427 Whittier Blvd",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"5454 El Cajon Blvd",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"550 E Washington Blvd",
+    "city":"Crescent City",
+    "county":"Del Norte",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"55497 Van Buren St",
+    "city":"Thermal",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"58581 US Hwy",
+    "city":"Anza",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"600 Nut Tree Rd",
+    "city":"Vacaville",
+    "county":"Solano",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"601 S San Pedro St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"612 Spring Rd",
+    "city":"Moorpark",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"616 16th St",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"6330 Rugby Ave",
+    "city":"Huntington Beach",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"6330 Rugby Ave",
+    "city":"Huntington Park",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"6336 Passons Blvd",
+    "city":"Pico Rovera",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"637 Merced St",
+    "city":"Newman",
+    "county":"Stanislaus",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"65 Third St",
+    "city":"Point Reyes Station",
+    "county":"Marin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"650 Meta St",
+    "city":"Oxnard",
+    "county":"Ventura",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"6550 Front St",
+    "city":"Forestville",
+    "county":"Sonoma",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"678 3rd Ave",
+    "city":"Chula Vista",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"680 Fairplex Dr",
+    "city":"Pomona",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"6901 Atlantic Ave",
+    "city":"Bell Gardens",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"6901 S Atlantic Ave",
+    "city":"Bell",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"69175 Ramon Rd",
+    "city":"Cathedral City",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"701 E Cesar E Chavez Ave",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"701 E Channel St",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"701 W Cesar E Chavez Ave",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"702 S 8th St",
+    "city":"Kerman",
+    "county":"Fresno",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"7107 Remmet Ave",
+    "city":"Canoga Park",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"721 Calaveras St",
+    "city":"Lodi",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"721 E 5th St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"7210 Murray Dr",
+    "city":"Stockton",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"727 Wilson St",
+    "city":"Los Angeles",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"730 Central Ave",
+    "city":"Tracy",
+    "county":"San Joaquin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"730 N Farmersville Blvd",
+    "city":"Farmersville",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"75 5th St",
+    "city":"Kettleman City",
+    "county":"Kings",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"7512 Morro Rd",
+    "city":"Atascadero",
+    "county":"San Luis Obispo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"77 Casa St",
+    "city":"San Luis Obispo",
+    "county":"San Luis Obispo",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"770 53rd St",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"7843 Lankershim Blvd",
+    "city":"North Hollywood",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"7967 Boadway Ave",
+    "city":"Lemon Grove",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"7967 Broadway Ave",
+    "city":"Lemon Grove",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"797 W Childs Ave",
+    "city":"Merced",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"7970 Lander Ave",
+    "city":"Hilmar",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"799 Front St",
+    "city":"Soledad",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"801 S Chevy Chase Dr",
+    "city":"Glendale",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"8041 Newman Ave",
+    "city":"Huntington Beach",
+    "county":"Orange",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"808 Oak Ave",
+    "city":"Greenfield",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"815 Dr Martin Luther King Jr Blvd",
+    "city":"Bakersfield",
+    "county":"Kern",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"818 Web",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"821 Texas Ave",
+    "city":"Los Banos",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"823 Gateway Center Way",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"823 Gatway Center Way",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"835 Web",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"8465 Old Redwood Hwy",
+    "city":"Windsor",
+    "county":"Sonoma",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"847 W Childs Ave",
+    "city":"Merced",
+    "county":"Merced",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"8627 Atlantic Ave",
+    "city":"South Gate",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"8788 Jamacha Rd",
+    "city":"Spring Valley",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"88 Mesa Rd",
+    "city":"Bolinas",
+    "county":"Marin",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"8856 Arlington Ave",
+    "city":"Riverside",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"8902 Woodman Ave",
+    "city":"Arleta",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"9 Crestview Dr",
+    "city":"Watsonville",
+    "county":"Santa Cruz",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"900 Fallon St",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"903 E Devonshire Ave",
+    "city":"Hemet",
+    "county":"Riverside",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"911 Washington St",
+    "city":"Calistoga",
+    "county":"Napa",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"9140 Van Nuys Blvd",
+    "city":"Panorama City",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"935 Market St",
+    "city":"Yuba City",
+    "county":"Sutter",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"9416 Rd",
+    "city":"Terra Bella",
+    "county":"Tulare",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"9436 E Slauson Ave",
+    "city":"Pico Rivera",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"9436 Slauson Ave",
+    "city":"Pico Rivera",
+    "county":"Los Angeles",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"950 Cir",
+    "city":"Salinas",
+    "county":"Monterey",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"950 S Euclid Ave",
+    "city":"San Diego",
+    "county":"San Diego",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"9933 MacArthur Blvd",
+    "city":"Oakland",
+    "county":"Alameda",
+    "site_type":"FQHC"
+  },
+  {
+    "street_address":"995 Potrero Ave",
+    "city":"San Francisco",
+    "county":"San Francisco",
+    "site_type":"FQHC"
+  }
+]
