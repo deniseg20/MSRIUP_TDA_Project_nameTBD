@@ -1,4 +1,4 @@
-#Walking 411 locations with 42 neighbors
+#Walking 411 locations with 35 neighbors
 
 pip install requests pandas numpy
 
@@ -27,7 +27,7 @@ class WalkingDistanceMatrix:
         }
         self.results = {}
     
-    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 42) -> List[int]:
+    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 35) -> List[int]:
         target = locations[target_index]
         target_coords = np.array([target['lat'], target['lng']])
         
@@ -101,7 +101,7 @@ class WalkingDistanceMatrix:
             logger.error(f"Error getting walking route: {str(e)}")
             return None, None
     
-    def generate_walking_matrices(self, locations: List[Dict], n_neighbors: int = 42) -> Tuple[np.ndarray, np.ndarray]:
+    def generate_walking_matrices(self, locations: List[Dict], n_neighbors: int = 35) -> Tuple[np.ndarray, np.ndarray]:
         """
         Generate actual matrices for walking distance and duration.
         
@@ -163,33 +163,33 @@ class WalkingDistanceMatrix:
         duration_df = pd.DataFrame(duration_matrix, 
                                   index=location_names, 
                                   columns=location_names)
-        duration_df.to_csv(f"{output_dir}/walking_duration_matrix_411_42.csv")
-        logger.info(f"Saved walking duration matrix to {output_dir}/walking_duration_matrix_411_42.csv")
+        duration_df.to_csv(f"{output_dir}/walking_duration_matrix_411_35.csv")
+        logger.info(f"Saved walking duration matrix to {output_dir}/walking_duration_matrix_411_35.csv")
         
         # Save duration matrix (minutes)
         duration_minutes_df = pd.DataFrame(duration_matrix / 60, 
                                           index=location_names, 
                                           columns=location_names)
-        duration_minutes_df.to_csv(f"{output_dir}/walking_duration_minutes_matrix_411_42.csv")
-        logger.info(f"Saved walking duration (minutes) matrix to {output_dir}/walking_duration_minutes_matrix_411_42.csv")
+        duration_minutes_df.to_csv(f"{output_dir}/walking_duration_minutes_matrix_411_35.csv")
+        logger.info(f"Saved walking duration (minutes) matrix to {output_dir}/walking_duration_minutes_matrix_411_35.csv")
         
         # Save distance matrix (meters)
         distance_df = pd.DataFrame(distance_matrix, 
                                   index=location_names, 
                                   columns=location_names)
-        distance_df.to_csv(f"{output_dir}/walking_distance_meters_matrix_411_42.csv")
-        logger.info(f"Saved walking distance (meters) matrix to {output_dir}/walking_distance_meters_matrix_411_42.csv")
+        distance_df.to_csv(f"{output_dir}/walking_distance_meters_matrix_411_35.csv")
+        logger.info(f"Saved walking distance (meters) matrix to {output_dir}/walking_distance_meters_matrix_411_35.csv")
         
         # Save distance matrix (kilometers)
         distance_km_df = pd.DataFrame(distance_matrix / 1000, 
                                      index=location_names, 
                                      columns=location_names)
-        distance_km_df.to_csv(f"{output_dir}/walking_distance_km_matrix_411_42.csv")
-        logger.info(f"Saved walking distance (km) matrix to {output_dir}/walking_distance_km_matrix_411_42.csv")
+        distance_km_df.to_csv(f"{output_dir}/walking_distance_km_matrix_411_35.csv")
+        logger.info(f"Saved walking distance (km) matrix to {output_dir}/walking_distance_km_matrix_411_35.csv")
         
         # Save matrices as numpy files for easy loading
-        np.save(f"{output_dir}/walking_duration_matrix_411_42.npy", duration_matrix)
-        np.save(f"{output_dir}/walking_distance_matrix_411_42.npy", distance_matrix)
+        np.save(f"{output_dir}/walking_duration_matrix_411_35.npy", duration_matrix)
+        np.save(f"{output_dir}/walking_distance_matrix_411_35.npy", distance_matrix)
         logger.info(f"Saved walking matrices as .npy files")
 
 
@@ -236,7 +236,7 @@ def create_sample_locations_csv(filename: str = "locations_411.csv", num_locatio
 def main():
     API_KEY = "YOUR_GOOGLE_ROUTES_API_KEY_HERE"
     LOCATIONS_FILE = "locations_411.csv"
-    N_NEIGHBORS = 42
+    N_NEIGHBORS = 35
     OUTPUT_DIR = "walking_results"
     
     if API_KEY == "YOUR_GOOGLE_ROUTES_API_KEY_HERE":
@@ -271,7 +271,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-#--------------------------------------------#Walking 301 locations with 42 neighbors--------------------------------------------------
+#--------------------------------------------#Walking 301 locations with 35 neighbors--------------------------------------------------
 pip install requests pandas numpy
 
 import requests
@@ -299,7 +299,7 @@ class WalkingDistanceMatrix:
         }
         self.results = {}
     
-    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 42) -> List[int]:
+    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 35) -> List[int]:
         target = locations[target_index]
         target_coords = np.array([target['lat'], target['lng']])
         
@@ -373,7 +373,7 @@ class WalkingDistanceMatrix:
             logger.error(f"Error getting walking route: {str(e)}")
             return None, None
     
-    def generate_walking_matrices(self, locations: List[Dict], n_neighbors: int = 42) -> Tuple[np.ndarray, np.ndarray]:
+    def generate_walking_matrices(self, locations: List[Dict], n_neighbors: int = 35) -> Tuple[np.ndarray, np.ndarray]:
         """
         Generate actual matrices for walking distance and duration.
         
@@ -435,33 +435,33 @@ class WalkingDistanceMatrix:
         duration_df = pd.DataFrame(duration_matrix, 
                                   index=location_names, 
                                   columns=location_names)
-        duration_df.to_csv(f"{output_dir}/walking_duration_matrix_411_42.csv")
-        logger.info(f"Saved walking duration matrix to {output_dir}/walking_duration_matrix_411_42.csv")
+        duration_df.to_csv(f"{output_dir}/walking_duration_matrix_411_35.csv")
+        logger.info(f"Saved walking duration matrix to {output_dir}/walking_duration_matrix_411_35.csv")
         
         # Save duration matrix (minutes)
         duration_minutes_df = pd.DataFrame(duration_matrix / 60, 
                                           index=location_names, 
                                           columns=location_names)
-        duration_minutes_df.to_csv(f"{output_dir}/walking_duration_minutes_matrix_411_42.csv")
-        logger.info(f"Saved walking duration (minutes) matrix to {output_dir}/walking_duration_minutes_matrix_411_42.csv")
+        duration_minutes_df.to_csv(f"{output_dir}/walking_duration_minutes_matrix_411_35.csv")
+        logger.info(f"Saved walking duration (minutes) matrix to {output_dir}/walking_duration_minutes_matrix_411_35.csv")
         
         # Save distance matrix (meters)
         distance_df = pd.DataFrame(distance_matrix, 
                                   index=location_names, 
                                   columns=location_names)
-        distance_df.to_csv(f"{output_dir}/walking_distance_meters_matrix_411_42.csv")
-        logger.info(f"Saved walking distance (meters) matrix to {output_dir}/walking_distance_meters_matrix_411_42.csv")
+        distance_df.to_csv(f"{output_dir}/walking_distance_meters_matrix_411_35.csv")
+        logger.info(f"Saved walking distance (meters) matrix to {output_dir}/walking_distance_meters_matrix_411_35.csv")
         
         # Save distance matrix (kilometers)
         distance_km_df = pd.DataFrame(distance_matrix / 1000, 
                                      index=location_names, 
                                      columns=location_names)
-        distance_km_df.to_csv(f"{output_dir}/walking_distance_km_matrix_411_42.csv")
-        logger.info(f"Saved walking distance (km) matrix to {output_dir}/walking_distance_km_matrix_411_42.csv")
+        distance_km_df.to_csv(f"{output_dir}/walking_distance_km_matrix_411_35.csv")
+        logger.info(f"Saved walking distance (km) matrix to {output_dir}/walking_distance_km_matrix_411_35.csv")
         
         # Save matrices as numpy files for easy loading
-        np.save(f"{output_dir}/walking_duration_matrix_411_42.npy", duration_matrix)
-        np.save(f"{output_dir}/walking_distance_matrix_411_42.npy", distance_matrix)
+        np.save(f"{output_dir}/walking_duration_matrix_411_35.npy", duration_matrix)
+        np.save(f"{output_dir}/walking_distance_matrix_411_35.npy", distance_matrix)
         logger.info(f"Saved walking matrices as .npy files")
 
 
@@ -508,7 +508,7 @@ def create_sample_locations_csv(filename: str = "locations_411.csv", num_locatio
 def main():
     API_KEY = "YOUR_GOOGLE_ROUTES_API_KEY_HERE"
     LOCATIONS_FILE = "locations_411.csv"
-    N_NEIGHBORS = 42
+    N_NEIGHBORS = 35
     OUTPUT_DIR = "walking_results"
     
     if API_KEY == "YOUR_GOOGLE_ROUTES_API_KEY_HERE":
