@@ -1,2 +1,2 @@
-# MSRIUP_TDA_Project_nameTBD
+# MSRIUP_TDA_Healthcare_Accessibility
 MSRI-UP 2025 - Topological Data Analysis focused on ...
