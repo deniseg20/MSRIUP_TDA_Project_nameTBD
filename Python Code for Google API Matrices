@@ -1,3 +1,12 @@
+#Have to write requirement texts
+requests>=2.28.0
+pandas>=1.5.0
+numpy>=1.21.0
+
+#Installing some packages
+pip install requests pandas numpy
+
+#Starting the main code 
 import requests
 import json
 import time
