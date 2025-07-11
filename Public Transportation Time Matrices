@@ -1,0 +1,553 @@
+#Public Transportation 411 locationa 2
+
+pip install requests pandas numpy
+
+import requests
+import json
+import time
+import pandas as pd
+import numpy as np
+from typing import List, Dict, Tuple
+import logging
+from datetime import datetime
+import os
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+class PublicTransportDistanceMatrix:
+    def __init__(self, api_key: str):
+        self.api_key = api_key
+        self.base_url = "https://routes.googleapis.com/directions/v2:computeRoutes"
+        self.headers = {
+            "Content-Type": "application/json",
+            "X-Goog-Api-Key": api_key,
+            "X-Goog-FieldMask": "routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline"
+        }
+        self.results = {}
+    
+    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 42) -> List[int]:
+        target = locations[target_index]
+        target_coords = np.array([target['lat'], target['lng']])
+        
+        distances = []
+        for i, location in enumerate(locations):
+            if i != target_index:
+                coords = np.array([location['lat'], location['lng']])
+                distance = np.linalg.norm(target_coords - coords)
+                distances.append((i, distance))
+        
+        distances.sort(key=lambda x: x[1])
+        return [idx for idx, _ in distances[:n_neighbors]]
+    
+    def create_public_transport_request(self, origin: Dict, destination: Dict) -> Dict:
+        return {
+            "origin": {
+                "location": {
+                    "latLng": {
+                        "latitude": origin['lat'],
+                        "longitude": origin['lng']
+                    }
+                }
+            },
+            "destination": {
+                "location": {
+                    "latLng": {
+                        "latitude": destination['lat'],
+                        "longitude": destination['lng']
+                    }
+                }
+            },
+            "travelMode": "TRANSIT",
+            "routingPreference": "DEFAULT",
+            "computeAlternativeRoutes": False,
+            "transitPreferences": {
+                "allowedTravelModes": ["BUS", "SUBWAY", "TRAIN", "TRAM"],
+                "routingPreference": "FEWER_TRANSFERS"
+            },
+            "languageCode": "en-US",
+            "units": "METRIC"
+        }
+    
+    def get_public_transport_route(self, origin: Dict, destination: Dict) -> Tuple[int, int]:
+        try:
+            request_payload = self.create_public_transport_request(origin, destination)
+            
+            response = requests.post(
+                self.base_url,
+                headers=self.headers,
+                json=request_payload,
+                timeout=30
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                if 'routes' in data and len(data['routes']) > 0:
+                    route = data['routes'][0]
+                    duration = route.get('duration', '0s')
+                    distance = route.get('distanceMeters', 0)
+                    
+                    if isinstance(duration, str):
+                        duration_seconds = int(duration[:-1]) if duration.endswith('s') else int(duration)
+                    else:
+                        duration_seconds = int(duration)
+                    
+                    return duration_seconds, distance
+                else:
+                    logger.warning(f"No public transport route found from {origin} to {destination}")
+                    return None, None
+            else:
+                logger.error(f"API request failed: {response.status_code} - {response.text}")
+                return None, None
+                
+        except Exception as e:
+            logger.error(f"Error getting public transport route: {str(e)}")
+            return None, None
+    
+    def generate_public_transport_matrices(self, locations: List[Dict], n_neighbors: int = 42) -> Tuple[np.ndarray, np.ndarray]:
+        """
+        Generate actual matrices for public transport distance and duration.
+        
+        Returns:
+            Tuple[np.ndarray, np.ndarray]: (duration_matrix, distance_matrix)
+        """
+        total_locations = len(locations)
+        logger.info(f"Starting PUBLIC TRANSPORT matrix generation for {total_locations} locations")
+        
+        # Initialize matrices with NaN values
+        duration_matrix = np.full((total_locations, total_locations), np.nan)
+        distance_matrix = np.full((total_locations, total_locations), np.nan)
+        
+        for i, origin in enumerate(locations):
+            logger.info(f"Processing location {i+1}/{total_locations}: {origin.get('name', f'Location {i}')}")
+            
+            neighbor_indices = self.get_nearest_neighbors(locations, i, n_neighbors)
+            
+            # Calculate outbound routes
+            for neighbor_idx in neighbor_indices:
+                destination = locations[neighbor_idx]
+                duration, distance = self.get_public_transport_route(origin, destination)
+                
+                if duration is not None:
+                    # Fill outbound route in matrix
+                    duration_matrix[i, neighbor_idx] = duration
+                    distance_matrix[i, neighbor_idx] = distance
+                
+                time.sleep(0.1)
+            
+            # Calculate return routes
+            for neighbor_idx in neighbor_indices:
+                origin_neighbor = locations[neighbor_idx]
+                duration, distance = self.get_public_transport_route(origin_neighbor, origin)
+                
+                if duration is not None:
+                    # Fill return route in matrix
+                    duration_matrix[neighbor_idx, i] = duration
+                    distance_matrix[neighbor_idx, i] = distance
+                
+                time.sleep(0.1)
+            
+            if (i + 1) % 10 == 0:
+                logger.info(f"Completed {i+1}/{total_locations} locations")
+        
+        return duration_matrix, distance_matrix
+    
+    def save_public_transport_matrices(self, duration_matrix: np.ndarray, distance_matrix: np.ndarray, 
+                                     locations: List[Dict], output_dir: str = "public_transport_results"):
+        """
+        Save public transport matrices as CSV files.
+        """
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Create location names for headers
+        location_names = [loc.get('name', f'Location_{i}') for i, loc in enumerate(locations)]
+        
+        # Save duration matrix (seconds)
+        duration_df = pd.DataFrame(duration_matrix, 
+                                  index=location_names, 
+                                  columns=location_names)
+        duration_df.to_csv(f"{output_dir}/public_transport_duration_matrix_411_42.csv")
+        logger.info(f"Saved public transport duration matrix to {output_dir}/public_transport_duration_matrix_411_42.csv")
+        
+        # Save duration matrix (minutes)
+        duration_minutes_df = pd.DataFrame(duration_matrix / 60, 
+                                          index=location_names, 
+                                          columns=location_names)
+        duration_minutes_df.to_csv(f"{output_dir}/public_transport_duration_minutes_matrix_411_42.csv")
+        logger.info(f"Saved public transport duration (minutes) matrix to {output_dir}/public_transport_duration_minutes_matrix_411_42.csv")
+        
+        # Save distance matrix (meters)
+        distance_df = pd.DataFrame(distance_matrix, 
+                                  index=location_names, 
+                                  columns=location_names)
+        distance_df.to_csv(f"{output_dir}/public_transport_distance_meters_matrix_411_42.csv")
+        logger.info(f"Saved public transport distance (meters) matrix to {output_dir}/public_transport_distance_meters_matrix_411_42.csv")
+        
+        # Save distance matrix (kilometers)
+        distance_km_df = pd.DataFrame(distance_matrix / 1000, 
+                                     index=location_names, 
+                                     columns=location_names)
+        distance_km_df.to_csv(f"{output_dir}/public_transport_distance_km_matrix_411_42.csv")
+        logger.info(f"Saved public transport distance (km) matrix to {output_dir}/public_transport_distance_km_matrix_411_42.csv")
+        
+        # Save matrices as numpy files for easy loading
+        np.save(f"{output_dir}/public_transport_duration_matrix_411_42.npy", duration_matrix)
+        np.save(f"{output_dir}/public_transport_distance_matrix_411_42.npy", distance_matrix)
+        logger.info(f"Saved public transport matrices as .npy files")
+
+
+def load_locations_from_csv(csv_file: str) -> List[Dict]:
+    df = pd.read_csv(csv_file)
+    locations = []
+    
+    for _, row in df.iterrows():
+        locations.append({
+            'name': row['name'],
+            'lat': float(row['lat']),
+            'lng': float(row['lng'])
+        })
+    
+    return locations
+
+
+def create_sample_locations_csv(filename: str = "locations_411.csv", num_locations: int = 411):
+    cities = [
+        (40.7128, -74.0060, "New York"),
+        (34.0522, -118.2437, "Los Angeles"),
+        (41.8781, -87.6298, "Chicago"),
+        (29.7604, -95.3698, "Houston"),
+        (39.9526, -75.1652, "Philadelphia")
+    ]
+    
+    locations = []
+    for i in range(num_locations):
+        base_lat, base_lng, city_name = cities[i % len(cities)]
+        lat = base_lat + np.random.uniform(-0.1, 0.1)
+        lng = base_lng + np.random.uniform(-0.1, 0.1)
+        
+        locations.append({
+            'name': f"{city_name} Location {i+1}",
+            'lat': lat,
+            'lng': lng
+        })
+    
+    df = pd.DataFrame(locations)
+    df.to_csv(filename, index=False)
+    logger.info(f"Created sample locations file: {filename}")
+
+
+def main():
+    API_KEY = "YOUR_GOOGLE_ROUTES_API_KEY_HERE"
+    LOCATIONS_FILE = "locations_411.csv"
+    N_NEIGHBORS = 42
+    OUTPUT_DIR = "public_transport_results"
+    
+    if API_KEY == "YOUR_GOOGLE_ROUTES_API_KEY_HERE":
+        logger.error("Please set your Google Routes API key!")
+        return
+    
+    if not os.path.exists(LOCATIONS_FILE):
+        logger.info("Creating sample locations file...")
+        create_sample_locations_csv(LOCATIONS_FILE, 411)
+    
+    logger.info(f"Loading locations from {LOCATIONS_FILE}...")
+    locations = load_locations_from_csv(LOCATIONS_FILE)
+    logger.info(f"Loaded {len(locations)} locations")
+    
+    matrix_generator = PublicTransportDistanceMatrix(API_KEY)
+    
+    logger.info("Starting PUBLIC TRANSPORT matrix generation...")
+    start_time = datetime.now()
+    
+    duration_matrix, distance_matrix = matrix_generator.generate_public_transport_matrices(locations, N_NEIGHBORS)
+    
+    end_time = datetime.now()
+    duration = end_time - start_time
+    logger.info(f"PUBLIC TRANSPORT matrix generation completed in {duration}")
+    
+    logger.info("Saving PUBLIC TRANSPORT matrices...")
+    matrix_generator.save_public_transport_matrices(duration_matrix, distance_matrix, locations, OUTPUT_DIR)
+    
+    logger.info("PUBLIC TRANSPORT analysis complete! Check the 'public_transport_results' directory for matrix files.")
+
+
+if __name__ == "__main__":
+    main()
+
+#-----------------------Public transport 301 locations 42 neighbors-----------------------------------------------
+
+pip install requests pandas numpy
+
+import requests
+import json
+import time
+import pandas as pd
+import numpy as np
+from typing import List, Dict, Tuple
+import logging
+from datetime import datetime
+import os
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+class DrivingDistanceMatrix:
+    def __init__(self, api_key: str):
+        self.api_key = api_key
+        self.base_url = "https://routes.googleapis.com/directions/v2:computeRoutes"
+        self.headers = {
+            "Content-Type": "application/json",
+            "X-Goog-Api-Key": api_key,
+            "X-Goog-FieldMask": "routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline"
+        }
+        self.results = {}
+    
+    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 42) -> List[int]:
+        target = locations[target_index]
+        target_coords = np.array([target['lat'], target['lng']])
+        
+        distances = []
+        for i, location in enumerate(locations):
+            if i != target_index:
+                coords = np.array([location['lat'], location['lng']])
+                distance = np.linalg.norm(target_coords - coords)
+                distances.append((i, distance))
+        
+        distances.sort(key=lambda x: x[1])
+        return [idx for idx, _ in distances[:n_neighbors]]
+    
+    def create_driving_request(self, origin: Dict, destination: Dict) -> Dict:
+        return {
+            "origin": {
+                "location": {
+                    "latLng": {
+                        "latitude": origin['lat'],
+                        "longitude": origin['lng']
+                    }
+                }
+            },
+            "destination": {
+                "location": {
+                    "latLng": {
+                        "latitude": destination['lat'],
+                        "longitude": destination['lng']
+                    }
+                }
+            },
+            "travelMode": "DRIVE",
+            "routingPreference": "TRAFFIC_UNAWARE",
+            "computeAlternativeRoutes": False,
+            "routeModifiers": {
+                "avoidTolls": False,
+                "avoidHighways": False
+            },
+            "languageCode": "en-US",
+            "units": "METRIC"
+        }
+    
+    def get_driving_route(self, origin: Dict, destination: Dict) -> Tuple[int, int]:
+        try:
+            request_payload = self.create_driving_request(origin, destination)
+            
+            response = requests.post(
+                self.base_url,
+                headers=self.headers,
+                json=request_payload,
+                timeout=30
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                if 'routes' in data and len(data['routes']) > 0:
+                    route = data['routes'][0]
+                    duration = route.get('duration', '0s')
+                    distance = route.get('distanceMeters', 0)
+                    
+                    if isinstance(duration, str):
+                        duration_seconds = int(duration[:-1]) if duration.endswith('s') else int(duration)
+                    else:
+                        duration_seconds = int(duration)
+                    
+                    return duration_seconds, distance
+                else:
+                    logger.warning(f"No driving route found from {origin} to {destination}")
+                    return None, None
+            else:
+                logger.error(f"API request failed: {response.status_code} - {response.text}")
+                return None, None
+                
+        except Exception as e:
+            logger.error(f"Error getting driving route: {str(e)}")
+            return None, None
+    
+    def generate_driving_matrices(self, locations: List[Dict], n_neighbors: int = 42) -> Tuple[np.ndarray, np.ndarray]:
+        """
+        Generate actual matrices for driving distance and duration.
+        
+        Returns:
+            Tuple[np.ndarray, np.ndarray]: (duration_matrix, distance_matrix)
+        """
+        total_locations = len(locations)
+        logger.info(f"Starting DRIVING matrix generation for {total_locations} locations")
+        
+        # Initialize matrices with NaN values
+        duration_matrix = np.full((total_locations, total_locations), np.nan)
+        distance_matrix = np.full((total_locations, total_locations), np.nan)
+        
+        for i, origin in enumerate(locations):
+            logger.info(f"Processing location {i+1}/{total_locations}: {origin.get('name', f'Location {i}')}")
+            
+            neighbor_indices = self.get_nearest_neighbors(locations, i, n_neighbors)
+            
+            # Calculate outbound routes
+            for neighbor_idx in neighbor_indices:
+                destination = locations[neighbor_idx]
+                duration, distance = self.get_driving_route(origin, destination)
+                
+                if duration is not None:
+                    # Fill outbound route in matrix
+                    duration_matrix[i, neighbor_idx] = duration
+                    distance_matrix[i, neighbor_idx] = distance
+                
+                time.sleep(0.1)
+            
+            # Calculate return routes
+            for neighbor_idx in neighbor_indices:
+                origin_neighbor = locations[neighbor_idx]
+                duration, distance = self.get_driving_route(origin_neighbor, origin)
+                
+                if duration is not None:
+                    # Fill return route in matrix
+                    duration_matrix[neighbor_idx, i] = duration
+                    distance_matrix[neighbor_idx, i] = distance
+                
+                time.sleep(0.1)
+            
+            if (i + 1) % 10 == 0:
+                logger.info(f"Completed {i+1}/{total_locations} locations")
+        
+        return duration_matrix, distance_matrix
+    
+    def save_driving_matrices(self, duration_matrix: np.ndarray, distance_matrix: np.ndarray, 
+                            locations: List[Dict], output_dir: str = "driving_results"):
+        """
+        Save driving matrices as CSV files.
+        """
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Create location names for headers
+        location_names = [loc.get('name', f'Location_{i}') for i, loc in enumerate(locations)]
+        
+        # Save duration matrix (seconds)
+        duration_df = pd.DataFrame(duration_matrix, 
+                                  index=location_names, 
+                                  columns=location_names)
+        duration_df.to_csv(f"{output_dir}/driving_duration_matrix_301_42.csv")
+        logger.info(f"Saved driving duration matrix to {output_dir}/driving_duration_matrix_301_42.csv")
+        
+        # Save duration matrix (minutes)
+        duration_minutes_df = pd.DataFrame(duration_matrix / 60, 
+                                          index=location_names, 
+                                          columns=location_names)
+        duration_minutes_df.to_csv(f"{output_dir}/driving_duration_minutes_matrix_301_42.csv")
+        logger.info(f"Saved driving duration (minutes) matrix to {output_dir}/driving_duration_minutes_matrix_301_42.csv")
+        
+        # Save distance matrix (meters)
+        distance_df = pd.DataFrame(distance_matrix, 
+                                  index=location_names, 
+                                  columns=location_names)
+        distance_df.to_csv(f"{output_dir}/driving_distance_meters_matrix_301_42.csv")
+        logger.info(f"Saved driving distance (meters) matrix to {output_dir}/driving_distance_meters_matrix_301_42.csv")
+        
+        # Save distance matrix (kilometers)
+        distance_km_df = pd.DataFrame(distance_matrix / 1000, 
+                                     index=location_names, 
+                                     columns=location_names)
+        distance_km_df.to_csv(f"{output_dir}/driving_distance_km_matrix_301_42.csv")
+        logger.info(f"Saved driving distance (km) matrix to {output_dir}/driving_distance_km_matrix_301_42.csv")
+        
+        # Save matrices as numpy files for easy loading
+        np.save(f"{output_dir}/driving_duration_matrix_301_42.npy", duration_matrix)
+        np.save(f"{output_dir}/driving_distance_matrix_301_42.npy", distance_matrix)
+        logger.info(f"Saved driving matrices as .npy files")
+
+
+def load_locations_from_csv(csv_file: str) -> List[Dict]:
+    df = pd.read_csv(csv_file)
+    locations = []
+    
+    for _, row in df.iterrows():
+        locations.append({
+            'name': row['name'],
+            'lat': float(row['lat']),
+            'lng': float(row['lng'])
+        })
+    
+    return locations
+
+
+def create_sample_locations_csv(filename: str = "locations_301.csv", num_locations: int = 301):
+    cities = [
+        (40.7128, -74.0060, "New York"),
+        (34.0522, -118.2437, "Los Angeles"),
+        (41.8781, -87.6298, "Chicago"),
+        (29.7604, -95.3698, "Houston"),
+        (39.9526, -75.1652, "Philadelphia")
+    ]
+    
+    locations = []
+    for i in range(num_locations):
+        base_lat, base_lng, city_name = cities[i % len(cities)]
+        lat = base_lat + np.random.uniform(-0.1, 0.1)
+        lng = base_lng + np.random.uniform(-0.1, 0.1)
+        
+        locations.append({
+            'name': f"{city_name} Location {i+1}",
+            'lat': lat,
+            'lng': lng
+        })
+    
+    df = pd.DataFrame(locations)
+    df.to_csv(filename, index=False)
+    logger.info(f"Created sample locations file: {filename}")
+
+
+def main():
+    API_KEY = "YOUR_GOOGLE_ROUTES_API_KEY_HERE"
+    LOCATIONS_FILE = "locations_301.csv"
+    N_NEIGHBORS = 42
+    OUTPUT_DIR = "driving_results"
+    
+    if API_KEY == "YOUR_GOOGLE_ROUTES_API_KEY_HERE":
+        logger.error("Please set your Google Routes API key!")
+        return
+    
+    if not os.path.exists(LOCATIONS_FILE):
+        logger.info("Creating sample locations file...")
+        create_sample_locations_csv(LOCATIONS_FILE, 301)
+    
+    logger.info(f"Loading locations from {LOCATIONS_FILE}...")
+    locations = load_locations_from_csv(LOCATIONS_FILE)
+    logger.info(f"Loaded {len(locations)} locations")
+    
+    matrix_generator = DrivingDistanceMatrix(API_KEY)
+    
+    logger.info("Starting DRIVING matrix generation...")
+    start_time = datetime.now()
+    
+    duration_matrix, distance_matrix = matrix_generator.generate_driving_matrices(locations, N_NEIGHBORS)
+    
+    end_time = datetime.now()
+    duration = end_time - start_time
+    logger.info(f"DRIVING matrix generation completed in {duration}")
+    
+    logger.info("Saving DRIVING matrices...")
+    matrix_generator.save_driving_matrices(duration_matrix, distance_matrix, locations, OUTPUT_DIR)
+    
+    logger.info("DRIVING analysis complete! Check the 'driving_results' directory for matrix files.")
+
+
+if __name__ == "__main__":
+    main()
