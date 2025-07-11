@@ -147,7 +147,10 @@ class DrivingDistanceMatrix:
                     distance_matrix[neighbor_idx, i] = distance
                 
                 time.sleep(0.1)
-            
+
+#Save after every location
+self.save_progress(duration_matrix, distance_matrix, locations, output_dir, i)
+
             if (i + 1) % 10 == 0:
                 logger.info(f"Completed {i+1}/{total_locations} locations")
         
@@ -422,7 +425,10 @@ class DrivingDistanceMatrix:
                     distance_matrix[neighbor_idx, i] = distance
                 
                 time.sleep(0.1)
-            
+
+#Save After Every Location
+self.save_progress(duration_matrix, distance_matrix, locations, output_dir, i)
+
             if (i + 1) % 10 == 0:
                 logger.info(f"Completed {i+1}/{total_locations} locations")
         
