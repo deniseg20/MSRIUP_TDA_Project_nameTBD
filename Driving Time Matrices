@@ -1,4 +1,4 @@
-#Driving 411 Locations w/ 42 neighbors
+#Driving 411 Locations w/ 35 neighbors
 
 pip install requests pandas numpy
 
@@ -27,7 +27,7 @@ class DrivingDistanceMatrix:
         }
         self.results = {}
     
-    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 42) -> List[int]:
+    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 35) -> List[int]:
         target = locations[target_index]
         target_coords = np.array([target['lat'], target['lng']])
         
@@ -105,7 +105,7 @@ class DrivingDistanceMatrix:
             logger.error(f"Error getting driving route: {str(e)}")
             return None, None
     
-    def generate_driving_matrices(self, locations: List[Dict], n_neighbors: int = 42) -> Tuple[np.ndarray, np.ndarray]:
+    def generate_driving_matrices(self, locations: List[Dict], n_neighbors: int = 35) -> Tuple[np.ndarray, np.ndarray]:
         """
         Generate actual matrices for driving distance and duration.
         
@@ -167,33 +167,33 @@ class DrivingDistanceMatrix:
         duration_df = pd.DataFrame(duration_matrix, 
                                   index=location_names, 
                                   columns=location_names)
-        duration_df.to_csv(f"{output_dir}/driving_duration_matrix_411_42.csv")
-        logger.info(f"Saved driving duration matrix to {output_dir}/driving_duration_matrix_411_42.csv")
+        duration_df.to_csv(f"{output_dir}/driving_duration_matrix_411_35.csv")
+        logger.info(f"Saved driving duration matrix to {output_dir}/driving_duration_matrix_411_35.csv")
         
         # Save duration matrix (minutes)
         duration_minutes_df = pd.DataFrame(duration_matrix / 60, 
                                           index=location_names, 
                                           columns=location_names)
-        duration_minutes_df.to_csv(f"{output_dir}/driving_duration_minutes_matrix_411_42.csv")
-        logger.info(f"Saved driving duration (minutes) matrix to {output_dir}/driving_duration_minutes_matrix_411_42.csv")
+        duration_minutes_df.to_csv(f"{output_dir}/driving_duration_minutes_matrix_411_35.csv")
+        logger.info(f"Saved driving duration (minutes) matrix to {output_dir}/driving_duration_minutes_matrix_411_35.csv")
         
         # Save distance matrix (meters)
         distance_df = pd.DataFrame(distance_matrix, 
                                   index=location_names, 
                                   columns=location_names)
-        distance_df.to_csv(f"{output_dir}/driving_distance_meters_matrix_411_42.csv")
-        logger.info(f"Saved driving distance (meters) matrix to {output_dir}/driving_distance_meters_matrix_411_42.csv")
+        distance_df.to_csv(f"{output_dir}/driving_distance_meters_matrix_411_35.csv")
+        logger.info(f"Saved driving distance (meters) matrix to {output_dir}/driving_distance_meters_matrix_411_35.csv")
         
         # Save distance matrix (kilometers)
         distance_km_df = pd.DataFrame(distance_matrix / 1000, 
                                      index=location_names, 
                                      columns=location_names)
-        distance_km_df.to_csv(f"{output_dir}/driving_distance_km_matrix_411_42.csv")
-        logger.info(f"Saved driving distance (km) matrix to {output_dir}/driving_distance_km_matrix_411_42.csv")
+        distance_km_df.to_csv(f"{output_dir}/driving_distance_km_matrix_411_35.csv")
+        logger.info(f"Saved driving distance (km) matrix to {output_dir}/driving_distance_km_matrix_411_35.csv")
         
         # Save matrices as numpy files for easy loading
-        np.save(f"{output_dir}/driving_duration_matrix_411_42.npy", duration_matrix)
-        np.save(f"{output_dir}/driving_distance_matrix_411_42.npy", distance_matrix)
+        np.save(f"{output_dir}/driving_duration_matrix_411_35.npy", duration_matrix)
+        np.save(f"{output_dir}/driving_distance_matrix_411_35.npy", distance_matrix)
         logger.info(f"Saved driving matrices as .npy files")
 
 
@@ -240,7 +240,7 @@ def create_sample_locations_csv(filename: str = "locations_411.csv", num_locatio
 def main():
     API_KEY = "YOUR_GOOGLE_ROUTES_API_KEY_HERE"
     LOCATIONS_FILE = "locations_411.csv"
-    N_NEIGHBORS = 42
+    N_NEIGHBORS = 35
     OUTPUT_DIR = "driving_results"
     
     if API_KEY == "YOUR_GOOGLE_ROUTES_API_KEY_HERE":
@@ -275,7 +275,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-#---------------------------- Driving 301 locations w/ 42 neighbors --------------------------------------------
+#---------------------------- Driving 301 locations w/ 35 neighbors --------------------------------------------
 
 import requests
 import json
@@ -302,7 +302,7 @@ class DrivingDistanceMatrix:
         }
         self.results = {}
     
-    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 42) -> List[int]:
+    def get_nearest_neighbors(self, locations: List[Dict], target_index: int, n_neighbors: int = 35) -> List[int]:
         target = locations[target_index]
         target_coords = np.array([target['lat'], target['lng']])
         
@@ -380,7 +380,7 @@ class DrivingDistanceMatrix:
             logger.error(f"Error getting driving route: {str(e)}")
             return None, None
     
-    def generate_driving_matrices(self, locations: List[Dict], n_neighbors: int = 42) -> Tuple[np.ndarray, np.ndarray]:
+    def generate_driving_matrices(self, locations: List[Dict], n_neighbors: int = 35) -> Tuple[np.ndarray, np.ndarray]:
         """
         Generate actual matrices for driving distance and duration.
         
@@ -442,33 +442,33 @@ class DrivingDistanceMatrix:
         duration_df = pd.DataFrame(duration_matrix, 
                                   index=location_names, 
                                   columns=location_names)
-        duration_df.to_csv(f"{output_dir}/driving_duration_matrix_301_42.csv")
-        logger.info(f"Saved driving duration matrix to {output_dir}/driving_duration_matrix_301_42.csv")
+        duration_df.to_csv(f"{output_dir}/driving_duration_matrix_301_35.csv")
+        logger.info(f"Saved driving duration matrix to {output_dir}/driving_duration_matrix_301_35.csv")
         
         # Save duration matrix (minutes)
         duration_minutes_df = pd.DataFrame(duration_matrix / 60, 
                                           index=location_names, 
                                           columns=location_names)
-        duration_minutes_df.to_csv(f"{output_dir}/driving_duration_minutes_matrix_301_42.csv")
-        logger.info(f"Saved driving duration (minutes) matrix to {output_dir}/driving_duration_minutes_matrix_301_42.csv")
+        duration_minutes_df.to_csv(f"{output_dir}/driving_duration_minutes_matrix_301_35.csv")
+        logger.info(f"Saved driving duration (minutes) matrix to {output_dir}/driving_duration_minutes_matrix_301_35.csv")
         
         # Save distance matrix (meters)
         distance_df = pd.DataFrame(distance_matrix, 
                                   index=location_names, 
                                   columns=location_names)
-        distance_df.to_csv(f"{output_dir}/driving_distance_meters_matrix_301_42.csv")
-        logger.info(f"Saved driving distance (meters) matrix to {output_dir}/driving_distance_meters_matrix_301_42.csv")
+        distance_df.to_csv(f"{output_dir}/driving_distance_meters_matrix_301_35.csv")
+        logger.info(f"Saved driving distance (meters) matrix to {output_dir}/driving_distance_meters_matrix_301_35.csv")
         
         # Save distance matrix (kilometers)
         distance_km_df = pd.DataFrame(distance_matrix / 1000, 
                                      index=location_names, 
                                      columns=location_names)
-        distance_km_df.to_csv(f"{output_dir}/driving_distance_km_matrix_301_42.csv")
-        logger.info(f"Saved driving distance (km) matrix to {output_dir}/driving_distance_km_matrix_301_42.csv")
+        distance_km_df.to_csv(f"{output_dir}/driving_distance_km_matrix_301_35.csv")
+        logger.info(f"Saved driving distance (km) matrix to {output_dir}/driving_distance_km_matrix_301_35.csv")
         
         # Save matrices as numpy files for easy loading
-        np.save(f"{output_dir}/driving_duration_matrix_301_42.npy", duration_matrix)
-        np.save(f"{output_dir}/driving_distance_matrix_301_42.npy", distance_matrix)
+        np.save(f"{output_dir}/driving_duration_matrix_301_35.npy", duration_matrix)
+        np.save(f"{output_dir}/driving_distance_matrix_301_35.npy", distance_matrix)
         logger.info(f"Saved driving matrices as .npy files")
 
 
@@ -515,7 +515,7 @@ def create_sample_locations_csv(filename: str = "locations_301.csv", num_locatio
 def main():
     API_KEY = "YOUR_GOOGLE_ROUTES_API_KEY_HERE"
     LOCATIONS_FILE = "locations_301.csv"
-    N_NEIGHBORS = 42
+    N_NEIGHBORS = 35
     OUTPUT_DIR = "driving_results"
     
     if API_KEY == "YOUR_GOOGLE_ROUTES_API_KEY_HERE":
